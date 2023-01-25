@@ -1,7 +1,7 @@
 import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
+import { IonApp, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home';
+import { Competences } from './pages/Competences';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -21,20 +21,41 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import { Profile } from './pages/Profile';
+import { CompetenceDetails } from './pages/CompetenceDetails';
+
 
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
-      <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/home" />
-        </Route>
-      </IonRouterOutlet>
+      <IonTabs>
+        <IonRouterOutlet>
+          <Route exact path="/competences">
+            <Competences />
+          </Route>
+          <Route exact path="/profile">
+            <Profile />
+          </Route>
+          <Route path="/competence-details/:id">
+            <CompetenceDetails />
+          </Route>
+          <Route exact path="/">
+            <Redirect to="/competences" />
+          </Route>
+        </IonRouterOutlet>
+
+        <IonTabBar slot='bottom'>
+          <IonTabButton tab='competences' href='/competences'>
+            <IonLabel>Compétences</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab='profile' href='/profile'>
+            <IonLabel>Profile</IonLabel>
+          </IonTabButton>
+        </IonTabBar>
+      </IonTabs>
+      
     </IonReactRouter>
   </IonApp>
 );

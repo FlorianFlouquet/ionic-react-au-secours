@@ -1,0 +1,22 @@
+{
+  "competences": [
+    {
+      "id": "66e062a9-e640-415f-9971-55bbca876e8a",
+      "name": "Java",
+      "text": "C'est Java quoi",
+      "img": "https://d1fmx1rbmqrxrr.cloudfront.net/zdnet/i/edit/ne/2021/09/logo_java.jpg"
+    },
+    {
+      "id": "dd7762b1-0fe4-4d77-be31-bf110036b842",
+      "name": "JS",
+      "text": "C'est JS quoi",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png"
+    },
+    {
+      "id": "YwlE9Zp",
+      "name": "React",
+      "text": "C'est React quoi",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"
+    }
+  ]
+}
