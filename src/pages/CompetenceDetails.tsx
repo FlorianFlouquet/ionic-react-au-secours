@@ -13,7 +13,7 @@ export const CompetenceDetails = () => {
 
   useEffect(() => {
     competencesService.findById(id).then((res) => setData(res.data));
-  }, [])
+  }, [id])
 
   return (
     <IonPage>
