@@ -1,0 +1,7 @@
+{
+  "name": "exercice-ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
