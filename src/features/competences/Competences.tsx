@@ -1,9 +1,9 @@
 import { IonButton, IonButtons, IonContent, IonHeader, IonInput, IonItem, IonLabel, IonList, IonModal, IonPage, IonToolbar } from '@ionic/react'
 import React, { ReactEventHandler, useEffect, useRef, useState } from 'react'
-import { competencesService } from '../services/CompetencesService';
-import { CompetenceModel } from '../types/CompetenceModel';
+import { competencesService } from './CompetencesService';
+import { CompetenceModel } from './CompetenceModel';
 import {v4 as uuidv4} from 'uuid';
-import { CompCard } from '../components/CompCard';
+import { CompCard } from './CompCard';
 import { OverlayEventDetail } from '@ionic/react/dist/types/components/react-component-lib/interfaces';
 import { Link } from 'react-router-dom';
 
@@ -66,7 +66,7 @@ export const Competences = () => {
                 </IonModal>
                 <IonList>
                     {competences && competences.map((item) => (
-                        <Link key={item.id} to={{pathname: `/competence-details/${item.id}`}}>
+                        <Link key={item.id} to={`/competence-details/${item.id}`}>
                             <CompCard item={item} />
                         </Link>
                     ))}

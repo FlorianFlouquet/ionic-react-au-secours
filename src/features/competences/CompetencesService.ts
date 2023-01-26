@@ -1,5 +1,5 @@
 import axios from "axios"
-import { CompetenceModel } from "../types/CompetenceModel"
+import { CompetenceModel } from "./CompetenceModel"
 
 const API_URL = "http://localhost:3001/competences"
 

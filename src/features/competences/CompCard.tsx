@@ -1,5 +1,5 @@
 import { IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/react'
-import { CompetenceModel } from '../types/CompetenceModel'
+import { CompetenceModel } from './CompetenceModel'
 
 interface props {
     item: CompetenceModel

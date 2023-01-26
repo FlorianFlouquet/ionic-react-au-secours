@@ -1,7 +1,10 @@
 import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs, setupIonicReact } from '@ionic/react';
+import { IonApp, IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { Competences } from './pages/Competences';
+import { Competences } from './features/competences/Competences';
+import { ListePersonnes} from './features/personnes/ListePersonnes';
+import { CompetenceDetails } from './features/competences/CompetenceDetails';
+import { triangle } from 'ionicons/icons';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -21,9 +24,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import { Profile } from './pages/Profile';
-import { CompetenceDetails } from './pages/CompetenceDetails';
-
+import { PersonneDetails } from './features/personnes/PersonneDetails';
 
 setupIonicReact();
 
@@ -35,11 +36,14 @@ const App: React.FC = () => (
           <Route exact path="/competences">
             <Competences />
           </Route>
-          <Route exact path="/profile">
-            <Profile />
+          <Route path="/profiles">
+            <ListePersonnes />
           </Route>
           <Route path="/competence-details/:id">
             <CompetenceDetails />
+          </Route>
+          <Route path="/personne-details/:id">
+            <PersonneDetails />
           </Route>
           <Route exact path="/">
             <Redirect to="/competences" />
@@ -48,10 +52,12 @@ const App: React.FC = () => (
 
         <IonTabBar slot='bottom'>
           <IonTabButton tab='competences' href='/competences'>
+            <IonIcon icon={triangle} />
             <IonLabel>Compétences</IonLabel>
           </IonTabButton>
-          <IonTabButton tab='profile' href='/profile'>
-            <IonLabel>Profile</IonLabel>
+          <IonTabButton tab='profiles' href='/profiles'>
+            <IonIcon icon={triangle} />
+            <IonLabel>Profiles</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>

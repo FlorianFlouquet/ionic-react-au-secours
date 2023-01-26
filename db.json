@@ -18,5 +18,15 @@
       "text": "C'est React quoi",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"
     }
+  ],
+  "personnes": [
+    {
+      "id": "ouai",
+      "familyName": "DuGrand",
+      "surname": "George",
+      "competences": [
+        {"id": "dd7762b1-0fe4-4d77-be31-bf110036b842", "niveau": "débutant"}
+      ]
+    }
   ]
 }
