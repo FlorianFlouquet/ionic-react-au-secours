@@ -1,4 +1,6 @@
+import { CompetenceModel } from "./CompetenceModel";
+
 export interface NiveauCompModel {
-    id: string,
+    competence: CompetenceModel,
     niveau: string
 }

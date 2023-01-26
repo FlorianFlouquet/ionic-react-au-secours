@@ -1,4 +1,4 @@
-import { IonLabel, IonPage } from '@ionic/react'
+import { IonContent, IonItem, IonLabel, IonList, IonPage } from '@ionic/react'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import { PersonneModel } from './PersonneModel'
@@ -17,6 +17,15 @@ export const PersonneDetails = () => {
   return (
     <IonPage>
         <IonLabel>{personne?.familyName} {personne?.surname}</IonLabel>
+        <IonContent>
+            <IonList>
+                {personne?.competences.map((competence) => (
+                    <IonItem>
+                        <IonLabel>{competence.competence.name} {competence.niveau}</IonLabel>
+                    </IonItem>
+                ))}
+            </IonList>
+        </IonContent>
     </IonPage>
   )
 }

@@ -30,7 +30,7 @@ export const CompetenceDetails = () => {
   useEffect(() => {
     let array : PersonneModel[] = [];
     allPersonnes.forEach(element => {
-      if(element.competences.some(item => item.id == data?.id)) {
+      if(element.competences.some(item => item.competence.id == data?.id)) {
         array.push(element);
       }
     });
