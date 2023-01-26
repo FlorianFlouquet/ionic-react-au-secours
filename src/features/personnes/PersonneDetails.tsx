@@ -20,7 +20,7 @@ export const PersonneDetails = () => {
         <IonContent>
             <IonList>
                 {personne?.competences.map((competence) => (
-                    <IonItem>
+                    <IonItem key={competence.competence.id}>
                         <IonLabel>{competence.competence.name} {competence.niveau}</IonLabel>
                     </IonItem>
                 ))}
