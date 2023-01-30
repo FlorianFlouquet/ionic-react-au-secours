@@ -60,7 +60,7 @@ export const CompetenceDetails = () => {
                   <IonLabel>{personne.surname} {personne.familyName}</IonLabel>
                   {personne.competences.map((competence) => (
                     competence.competence.id == data?.id &&
-                    <IonLabel class='ion-text-end'>{competence.niveau}</IonLabel>
+                    <IonLabel key={competence.competence.id} class='ion-text-end'>{competence.niveau}</IonLabel>
                   ))}
                 </IonItem>
               </IonCard>
