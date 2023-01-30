@@ -24,6 +24,7 @@
       "id": "ouai",
       "familyName": "DuGrand",
       "surname": "George",
+      "img": "https://img-9gag-fun.9cache.com/photo/a3Q5VW5_460s.jpg",
       "competences": [
         {
           "competence": {
@@ -32,7 +33,50 @@
             "text": "C'est React quoi",
             "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"
           },
-          "niveau": "débutant"
+          "niveau": "Débutant"
+        }
+      ]
+    },
+    {
+      "id": "sZpFSzl",
+      "familyName": "Frankfurt",
+      "surname": "Augustin",
+      "img": "https://yt3.googleusercontent.com/PFRD_rpPwAIY-FC2t6Ob0GpJe2udeEaXNwug4Dx8v7zxxda6ZKHU1aKBX-XoWvYh2H4Ow6TtBDk=s900-c-k-c0x00ffffff-no-rj",
+      "competences": [
+        {
+          "competence": {
+            "id": "66e062a9-e640-415f-9971-55bbca876e8a",
+            "name": "Java",
+            "text": "C'est Java quoi",
+            "img": "https://d1fmx1rbmqrxrr.cloudfront.net/zdnet/i/edit/ne/2021/09/logo_java.jpg"
+          },
+          "niveau": "Vétérant"
+        },
+        {
+          "competence": {
+            "id": "dd7762b1-0fe4-4d77-be31-bf110036b842",
+            "name": "JS",
+            "text": "C'est JS quoi",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png"
+          },
+          "niveau": "Confirmé"
+        }
+      ]
+    },
+    {
+      "id": "tbn_rIJ",
+      "familyName": "Alberto",
+      "surname": "Georgette",
+      "img": "https://production.listennotes.com/podcasts/el-podcast-m%C3%A1s-random-del-mundo-L6I3Ep9lRTB-xB_PCg0EDch.1400x1400.jpg",
+      "competences": [
+        {
+          "competence": {
+            "id": "YwlE9Zp",
+            "name": "React",
+            "text": "C'est React quoi",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"
+          },
+          "niveau": "Confirmé"
         }
       ]
     }

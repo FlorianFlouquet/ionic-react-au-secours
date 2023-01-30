@@ -37,15 +37,11 @@ export const CompetenceDetails = () => {
     setBonnesPersonnes([...array])
   }, [allPersonnes])
 
-  const navigate = () => {
-    console.log("oui");
-  }
-
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonLabel>{data?.name}</IonLabel>
+          <IonLabel class='ion-padding'>{data?.name}</IonLabel>
         </IonToolbar>
       </IonHeader>
       <IonCard>
@@ -55,12 +51,19 @@ export const CompetenceDetails = () => {
         </IonCardHeader>
       </IonCard>
       <IonContent>
-        <IonLabel>Liste des utilisateurs maitrisants cette compétence :</IonLabel>
+        <IonLabel class='ion-padding'>Utilisateurs maitrisants {data?.name}:</IonLabel>
         <IonList>
           {bonnesPersonnes.map((personne) => (
             <Link key={personne.id} to={{pathname: `/personne-details/${personne.id}`, state: personne}} >
-              <IonLabel>{personne.surname}</IonLabel>
-              <IonLabel>{personne.familyName}</IonLabel>
+              <IonCard>
+                <IonItem>
+                  <IonLabel>{personne.surname} {personne.familyName}</IonLabel>
+                  {personne.competences.map((competence) => (
+                    competence.competence.id == data?.id &&
+                    <IonLabel class='ion-text-end'>{competence.niveau}</IonLabel>
+                  ))}
+                </IonItem>
+              </IonCard>
             </Link>
           ))}
         </IonList>

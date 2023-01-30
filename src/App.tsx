@@ -1,10 +1,10 @@
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { Competences } from './features/competences/Competences';
+import { ListeCompetences } from './features/competences/ListeCompetences';
 import { ListePersonnes} from './features/personnes/ListePersonnes';
 import { CompetenceDetails } from './features/competences/CompetenceDetails';
-import { triangle } from 'ionicons/icons';
+import { body, clipboard, egg, happy, logoBuffer, triangle } from 'ionicons/icons';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -24,6 +24,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import './theme/app.css';
 import { PersonneDetails } from './features/personnes/PersonneDetails';
 
 setupIonicReact();
@@ -34,7 +35,7 @@ const App: React.FC = () => (
       <IonTabs>
         <IonRouterOutlet>
           <Route exact path="/competences">
-            <Competences />
+            <ListeCompetences />
           </Route>
           <Route path="/profiles">
             <ListePersonnes />
@@ -52,11 +53,11 @@ const App: React.FC = () => (
 
         <IonTabBar slot='bottom'>
           <IonTabButton tab='competences' href='/competences'>
-            <IonIcon icon={triangle} />
+            <IonIcon icon={clipboard} />
             <IonLabel>Compétences</IonLabel>
           </IonTabButton>
           <IonTabButton tab='profiles' href='/profiles'>
-            <IonIcon icon={triangle} />
+            <IonIcon icon={happy} />
             <IonLabel>Profiles</IonLabel>
           </IonTabButton>
         </IonTabBar>

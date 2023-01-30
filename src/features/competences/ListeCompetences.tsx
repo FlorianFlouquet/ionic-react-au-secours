@@ -1,15 +1,17 @@
-import { IonButton, IonButtons, IonContent, IonHeader, IonInput, IonItem, IonLabel, IonList, IonModal, IonPage, IonToolbar } from '@ionic/react'
+import { IonButton, IonButtons, IonCol, IonContent, IonHeader, IonInput, IonItem, IonLabel, IonList, IonModal, IonPage, IonRow, IonToolbar } from '@ionic/react'
 import React, { ReactEventHandler, useEffect, useRef, useState } from 'react'
 import { competencesService } from './CompetencesService';
 import { CompetenceModel } from './CompetenceModel';
 import {v4 as uuidv4} from 'uuid';
 import { CompCard } from './CompCard';
-import { OverlayEventDetail } from '@ionic/react/dist/types/components/react-component-lib/interfaces';
 import { Link } from 'react-router-dom';
+import { OverlayEventDetail } from '@ionic/react/dist/types/components/react-component-lib/interfaces';
 
-export const Competences = () => {
+export const ListeCompetences = () => {
 
     const [competences, setCompetences] = useState<CompetenceModel[]>([]);
+
+    const [showModal, setShowModal] = useState<boolean>(false);
 
     const [newCompetence, setNewCompetence] = useState<CompetenceModel>({
         id: "",
@@ -17,8 +19,6 @@ export const Competences = () => {
         text: "",
         img: ""
     })
-
-    const modal = useRef<HTMLIonModalElement>(null);
 
     useEffect(() => {
         competencesService.findAllCompetences().then((response) => setCompetences([...response.data]));
@@ -30,7 +30,7 @@ export const Competences = () => {
             ...newCompetence, id: uuidv4()
         })
         competencesService.ajouterCompetences(newCompetence).then((res) => setCompetences([...competences, res.data]));
-        modal.current?.dismiss();
+        setShowModal(false);
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,26 +42,34 @@ export const Competences = () => {
     return (
         <IonPage>
             <IonHeader>
-                <IonToolbar>
+                <IonToolbar class='ion-text-center'>
                     <IonLabel>Compétences</IonLabel>
                 </IonToolbar>
             </IonHeader>
-            <IonContent>
-                <IonButton id='open-modal'>Ajouter une compétence</IonButton>
-                <IonModal ref={modal} trigger='open-modal'>
+            <IonContent class='ion-padding-top'>
+                <IonRow class='ion-justify-content-center'>
+                    <IonButton onClick={() => setShowModal(true)}>Ajouter une compétence</IonButton>
+                </IonRow>
+                <IonModal isOpen={showModal}>
                     <IonToolbar>
                         <IonButtons slot="start">
-                            <IonButton onClick={() => modal.current?.dismiss()}>Cancel</IonButton>
+                            <IonButton onClick={() => setShowModal(false)}>Cancel</IonButton>
                         </IonButtons>
                     </IonToolbar>
                     <form onSubmit={handleSubmit}>
-                        <label>Nom</label>
-                        <input type="text" name='name' onChange={handleChange} />
-                        <label>Description</label>
-                        <input type="text" name='text' onChange={handleChange} />
-                        <label>Image URL</label>
-                        <input type="text" name='img' onChange={handleChange} />
-                        <button type='submit'>Ajouter</button>
+                        <div>
+                            <label>Nom</label>
+                            <input type="text" name='name' onChange={handleChange} />
+                        </div>
+                        <div>
+                            <label>Description</label>
+                            <input type="text" name='text' onChange={handleChange} />
+                        </div>
+                        <div>        
+                            <label>Image URL</label>
+                            <input type="text" name='img' onChange={handleChange} />
+                        </div>
+                        <IonButton type='submit'>Ajouter</IonButton>
                     </form>
                 </IonModal>
                 <IonList>
